@@ -30,3 +30,25 @@ public class ArrStack {
     }
 }
 ```
+
+In `main`, we create the stack and test its behavior:
+
+### Listing 72: BGZ-ArrStack/Main.java
+
+```java
+public class Main {
+    public static void main(String[] args) {
+        ArrStack stack = new ArrStack(5);
+        
+        for (int i = 1; i <= 5; ++i)
+            stack.push(i * i);
+        
+        while (!stack.empty())
+            System.out.print(stack.pop() + " ");
+        
+        System.out.println();
+    }
+}
+```
+
+This program initializes an `ArrStack` with a capacity of 5, pushes squares of integers from 1 to 5 onto the stack, and then pops and prints each element until the stack is empty. Note that exceptions will be thrown if attempts are made to pop from an empty stack or push onto a full stack due to out-of-bounds index usage.
